@@ -1,0 +1,14 @@
+services:
+  # DB
+  redis:
+    image: redis:alpine
+  # Backend
+  web:
+    build:
+      context: ./backend
+    ports:
+      - '8000:8000'
+    # volumes:
+    #   - .:/code
+    depends_on:
+      - redis
