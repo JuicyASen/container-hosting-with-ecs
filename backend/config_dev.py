@@ -2,8 +2,11 @@ app_settings = {
   "env": "dev"
 }
 
-connection_string = {
-  "redis": "redis:6379"
+db_settings = {
+  "redis": {
+    "host": "redis",
+    "port": 6379
+  }
 }
 
 logging = {}

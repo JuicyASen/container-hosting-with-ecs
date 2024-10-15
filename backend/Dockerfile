@@ -5,6 +5,9 @@ WORKDIR /code
 COPY requirements.txt /code
 RUN pip3 install -r requirements.txt
 COPY . /code
+RUN [ "${APP_ENV}" == "prod" ] \
+&& rm /code/config_dev.py \
+|| mv /code/config_dev.py /code/config.py  
 
 ENTRYPOINT ["python3"]
 CMD ["app.py"]
