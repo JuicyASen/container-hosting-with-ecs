@@ -6,6 +6,8 @@ services:
   web:
     build:
       context: ./backend
+      args:
+        - APP_ENV=dev
     ports:
       - '8000:8000'
     # volumes:
