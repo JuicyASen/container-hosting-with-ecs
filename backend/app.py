@@ -19,7 +19,7 @@ def reset():
   return "This webpage view counter has been reset\n"
 
 @app.route('/auth')
-def reset():
+def auth():
   return "What are you looking for?\n"
 
 @app.route('/health')
