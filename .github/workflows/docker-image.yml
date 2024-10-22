@@ -33,5 +33,3 @@ jobs:
       run: |
         docker build --build-arg APP_ENV=prod -t "${{ secrets.ECR_REGISTRY }}/${{ secrets.ECR_REPOSITORY }}:${{ secrets.IMAGE_TAG }}" ./backend
         docker push "${{ secrets.ECR_REGISTRY }}/${{ secrets.ECR_REPOSITORY }}:${{ secrets.IMAGE_TAG }}"
-
-    
