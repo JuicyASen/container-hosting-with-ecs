@@ -18,6 +18,10 @@ def reset():
   redis.set('hits', 0)
   return "This webpage view counter has been reset\n"
 
+@app.route('/auth')
+def reset():
+  return "What are you looking for?\n"
+
 @app.route('/health')
 def health():
   return {}
