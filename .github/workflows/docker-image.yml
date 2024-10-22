@@ -20,7 +20,7 @@ jobs:
     - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v2
       with:
-        role-to-assume: ${{ secret.oidc_role_arn }}
+        role-to-assume: ${{ secrets.oidc_role_arn }}
     
     - name: AWS Authentication
       id: login-ecr
@@ -28,7 +28,7 @@ jobs:
     
     - name: Build and Push the Backend Image
       run: |
-        docker build --build-arg APP_ENV=prod -t "${{ secret.ECR_REGISTRY }}/${{ secret.ECR_REPOSITORY }}:${{ secret.IMAGE_TAG }}" ./backend
-        docker push "${{ secret.ECR_REGISTRY }}/${{ secret.ECR_REPOSITORY }}:${{ secret.IMAGE_TAG }}"
+        docker build --build-arg APP_ENV=prod -t "${{ secrets.ECR_REGISTRY }}/${{ secrets.ECR_REPOSITORY }}:${{ secrets.IMAGE_TAG }}" ./backend
+        docker push "${{ secrets.ECR_REGISTRY }}/${{ secrets.ECR_REPOSITORY }}:${{ secrets.IMAGE_TAG }}"
 
     
