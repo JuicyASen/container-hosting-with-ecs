@@ -3,7 +3,7 @@ name: Image CI
 on:
   workflow_dispatch:
   push:
-    paths: [ "/backend/**" ]
+    paths: [ "./backend/**" ]
     branches: [ "main" ]
 
 permissions:
