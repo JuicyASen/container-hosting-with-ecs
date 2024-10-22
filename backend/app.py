@@ -20,7 +20,7 @@ def reset():
 
 @app.route('/auth')
 def auth():
-  return "What are you looking for?\n"
+  return "What are you looking for??\n"
 
 @app.route('/health')
 def health():
