@@ -3,8 +3,10 @@ name: Image CI
 on:
   workflow_dispatch:
   push:
-    paths: [ "./backend/**" ]
-    branches: [ "main" ]
+    paths:
+    - ./backend/**
+    branches:
+    - main
 
 permissions:
   id-token: write # This is required for requesting the JWT
